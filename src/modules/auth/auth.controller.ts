@@ -3,7 +3,7 @@ import { DataSource } from 'typeorm'
 
 import { registerUserSchema, loginUserSchema } from 'src/common/joi-schemas/user.schema'
 import { LoginUserDto, RegisterUserDto } from 'src/common/dto/user.dto'
-import { JoiValidationPipe } from 'src/common/pipes/joiValidation.pipe'
+import { JoiValidationPipe } from 'src/common/pipes/joi-validation.pipe'
 import { Public } from 'src/common/decorators/public.decorator'
 import { ValidationMessages } from 'src/utils/messages'
 
