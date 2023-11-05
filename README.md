@@ -1,42 +1,77 @@
 # NestJS Boilerplate
 
+## Description
+
+Nest JS Boilerplate is a repository that encapsulates all the basic features required for building APIs using Nest.js. It includes modules, services, controllers, decorators, guards, validation with Joi, JWT-based authentication, MySQL database connection, migrations and seeders, Swagger integration, and other helpful features to expedite the development process.
+
 ## Tools you must have in your PC
 
-Node, npm, mysql.
+Ensure you have the following installed:
 
-## Clone the repository
-
-By following the below mentioned instructions you can clone the repository.
-
-```sh
-cd projects
-git clone ssh
-// OR     http
-cd nestjs-boilerplate
-
-npm install
-```
+- NodeJS (along with npm)
+- NestJS
+- MySQL
 
 ## How to run the project?
 
-You can run the project with npm and it will be available in localhost:4000.
+Clone the repository and navigate to the project directory. Run the following command:
+
+```sh
+npm install
+```
+
+### Set up Environment Variables
+
+Before running the project in the development environment, create a .env file from the provided .env.example file.
+
+```sh
+cp .env.example .env
+```
+
+### Running Migrations
+
+To run migrations, use the following command:
 
 ```sh
 npm run typeorm:run-migrations
+```
 
+### Building the Project
+
+To build the project, use the following command:
+
+```sh
+npm run build
+```
+
+### Running Development Environment
+
+To run the development environment, use the following command:
+
+```sh
 npm run start:dev
 ```
 
-## Additional tools
+After starting the server, you can access the application at: http://localhost:PORT/api/v1
 
-### Creating migrations
+### Running Production Environment
 
-```sh
-npx typeorm migration:create ./src/database/migrations/new_migration_name
-```
-
-### Running migrations
+To run the production environment, use the following command:
 
 ```sh
-npx typeorm-ts-node-commonjs migration:run -d ./src/database/typeOrm.config.ts
+npm run start:prod
 ```
+
+### Global Prefix
+
+To update the global prefix, modify the /src/main.ts file. Find the following line:
+
+```sh
+app.setGlobalPrefix('api/v1');
+```
+
+Change it according to your requirements.
+
+### Adding New Nest.js Modules
+
+Add all new Nest.js modules in the /src/modules folder.
